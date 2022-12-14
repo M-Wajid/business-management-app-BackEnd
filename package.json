@@ -1,0 +1,16 @@
+{
+  "name": "business-management-app-backend",
+  "version": "1.0.0",
+  "description": "making backend of the project",
+  "main": "aap.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "M Wajid Aman",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^5.13.15"
+  }
+}
