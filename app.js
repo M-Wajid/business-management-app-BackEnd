@@ -4,6 +4,7 @@ const designRouter = require('./routes/designRoutes');
 const serviceRouter = require('./routes/serviceRoutes');
 const projectRouter = require('./routes/projectRoutes');
 const productRouter = require('./routes/productRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -23,4 +24,5 @@ app.use('/api/v1/designs',designRouter);
 app.use('/api/v1/products',productRouter);
 app.use('/api/v1/projects',projectRouter);
 app.use('/api/v1/services',serviceRouter);
+app.use('/api/v1/users', userRouter);
 module.exports = app;

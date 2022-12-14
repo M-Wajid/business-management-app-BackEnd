@@ -9,8 +9,10 @@
   "author": "M Wajid Aman",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.15"
   }
 }
