@@ -11,7 +11,7 @@ const app = express();
 app.use(express.json());
 
 app.use((req, res, next)=>{
-  console.log('Hello from the middleware ');
+  console.log("HTTP METHOD - " + req.method + " , URL - " + req.url);
   next();
 });
 
