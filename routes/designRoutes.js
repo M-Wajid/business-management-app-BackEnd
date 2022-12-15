@@ -11,7 +11,7 @@ router
   .post(auth, designController.createDesign);
 router
   .route('/:id')
-  .get(auth,designController.getDesign)
+  .get(designController.getDesign)
   .patch(auth, designController.updateDesign)
   .delete(auth, designController.deleteDesign);
 
