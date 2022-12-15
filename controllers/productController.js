@@ -1,8 +1,8 @@
-const product = require('./../models/productModel');
+const Product = require('./../models/productModel');
 
-exports.getAllproducts = async (req, res) => {
+exports.getAllProducts = async (req, res) => {
   try {
-    const products = await product.find()
+    const products = await Product.find()
     res.status(200).json({
       status: 'success',
       results: products.length,
@@ -18,9 +18,9 @@ exports.getAllproducts = async (req, res) => {
   }
 };
 
-exports.getproduct = async (req, res) => {
+exports.getProduct = async (req, res) => {
   try {
-    const product = await product.findById(req.params.id);
+    const product = await Product.findById(req.params.id);
     res.status(200).json({
       status: 'success',
       data: {
@@ -35,13 +35,13 @@ exports.getproduct = async (req, res) => {
   }
 };
 
-exports.createproduct = async (req, res) => {
+exports.createProduct = async (req, res) => {
   try {
-    const newproduct = await product.create(req.body);
+    const newProduct = await Product.create(req.body);
     res.status(201).json({
       status: "success",
       data: {
-        products: newproduct,
+        products: newProduct,
       },
     });
   } catch (err){
@@ -52,9 +52,9 @@ exports.createproduct = async (req, res) => {
   }
 };
 
-exports.updateproduct = async (req, res) => {
+exports.updateProduct = async (req, res) => {
   try {
-    const product = await product.findByIdAndUpdate(req.params.id, req.body, {
+    const product = await Product.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
     })
@@ -65,6 +65,7 @@ exports.updateproduct = async (req, res) => {
       },
     });
   } catch (err ){
+    console.log(err)
     res.status(400).json({
       status: 'fail',
       message: err,
@@ -72,9 +73,9 @@ exports.updateproduct = async (req, res) => {
   }
 };
 
-exports.deleteproduct = async (req, res) => {
+exports.deleteProduct = async (req, res) => {
   try {
-    await product.findByIdAndDelete(req.params.id);
+    await Product.findByIdAndDelete(req.params.id);
     res.status(204).json({
       status: 'success',
       data: null,

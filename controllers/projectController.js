@@ -20,11 +20,11 @@ exports.getAllprojects = async (req, res) => {
 
 exports.getproject = async (req, res) => {
   try {
-    const project = await project.findById(req.params.id);
+    const project1 = await project.findById(req.params.id);
     res.status(200).json({
       status: 'success',
       data: {
-        project,
+        project1,
       },
     });
   } catch (err){
@@ -54,14 +54,14 @@ exports.createproject = async (req, res) => {
 
 exports.updateproject = async (req, res) => {
   try {
-    const project = await project.findByIdAndUpdate(req.params.id, req.body, {
+    const project1 = await project.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
     })
     res.status(200).json({
       status: 'success',
       data: {
-        project
+        project1
       },
     });
   } catch (err ){

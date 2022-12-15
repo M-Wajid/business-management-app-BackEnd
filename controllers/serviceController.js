@@ -20,11 +20,11 @@ exports.getAllservices = async (req, res) => {
 
 exports.getservice = async (req, res) => {
   try {
-    const service = await service.findById(req.params.id);
+    const service1 = await service.findById(req.params.id);
     res.status(200).json({
       status: 'success',
       data: {
-        service,
+        service1,
       },
     });
   } catch (err){
@@ -54,14 +54,14 @@ exports.createservice = async (req, res) => {
 
 exports.updateservice = async (req, res) => {
   try {
-    const service = await service.findByIdAndUpdate(req.params.id, req.body, {
+    const service1 = await service.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
     })
     res.status(200).json({
       status: 'success',
       data: {
-        service
+        service1
       },
     });
   } catch (err ){

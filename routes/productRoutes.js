@@ -7,12 +7,12 @@ const auth = require("../middlewares/auth");
 
 router
   .route('/')
-  .get(productController.getAllproducts)
-  .post(auth,productController.createproduct);
+  .get(productController.getAllProducts)
+  .post(auth,productController.createProduct);
 router
   .route('/:id')
-  .get(productController.getproduct)
-  .patch(auth,productController.updateproduct)
-  .delete(auth,productController.deleteproduct);
+  .get(productController.getProduct)
+  .patch(productController.updateProduct)
+  .delete(auth,productController.deleteProduct);
 
 module.exports = router;
