@@ -5,6 +5,7 @@ const serviceRouter = require('./routes/serviceRoutes');
 const projectRouter = require('./routes/projectRoutes');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
+const subscriberRouter = require ('./routes/subscriberRoutes');
 
 const app = express();
 
@@ -25,4 +26,6 @@ app.use('/api/v1/products',productRouter);
 app.use('/api/v1/projects',projectRouter);
 app.use('/api/v1/services',serviceRouter);
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/subscriber', subscriberRouter);
+
 module.exports = app;
